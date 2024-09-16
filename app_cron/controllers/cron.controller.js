@@ -3,12 +3,12 @@ class cronController {
     constructor () {}
 
     async scheduler () {
-        var tgl = '2024-09-16 13:29:17';
+        var tgl = '2024-09-16 13:33:17';
 
         var dateSys = moment().format();
 
         const tglCheck = moment(tgl)
-                    .add('7', 'minutes')
+                    .add(process.env.MINUTES, 'minutes')
                     .format();
 
         try {

@@ -10,8 +10,9 @@ const CronController = require('./app_cron/controllers/cron.controller');
 var cronJob = new CronController();
 
 
-cron.schedule('1 * * * * *', () => {
-    console.log('jalan yuk');
+cron.schedule('*/10 * * * * *', () => {
+    const dtime = new Date();
+    console.log('jalan yuk '+ dtime);
     cronJob.scheduler()
 });
 
